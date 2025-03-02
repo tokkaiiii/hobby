@@ -1,9 +1,11 @@
+import Logo from "./elements/Logo";
+
 export default function Sidebar({ children }: { children: React.ReactNode}) {
   return (
     <div className="flex flex-row h-full">
-        <nav className="w-64 border-r-[1px] border-gray-200">
+        <nav className="w-[240px] border-r-[1px] border-neutral-600">
             <div className="p-[24px]">
-                로고
+                <Logo />    
             </div>
             <div>
                 메뉴
