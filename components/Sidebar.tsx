@@ -1,5 +1,5 @@
 import Logo from "./elements/Logo";
-
+import Navigator from "./elements/Navigator";
 export default function Sidebar({ children }: { children: React.ReactNode}) {
   return (
     <div className="flex flex-row h-full">
@@ -8,7 +8,7 @@ export default function Sidebar({ children }: { children: React.ReactNode}) {
                 <Logo />    
             </div>
             <div>
-                메뉴
+                <Navigator />
             </div>
         </nav>
       <div className="flex-1">

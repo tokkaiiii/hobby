@@ -2,10 +2,11 @@
 import Image from "next/image";
 import { IoMenu } from "react-icons/io5";
 import IconButton from "./IconButton";
+import { useRouter } from "next/navigation";
 export default function Logo() {
-
+const router = useRouter();
     const onClickIcon = () => {
-        console.log("clicked");
+        router.push("/");
     }
 
   return (
