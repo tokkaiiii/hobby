@@ -5,7 +5,7 @@ import PostCarousel from "@/components/PostCarousel";
 import { getPosts, getPostById } from "@/api/post";
 export default async function Home() {
   const posts = await getPosts();
-
+  
   return (
     <PagePadding>
       <div className="min-h-[600px]">
