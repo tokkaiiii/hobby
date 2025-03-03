@@ -7,11 +7,13 @@ import { posts } from "@/lib/data";
 export default async function Home() {
   return (
     <PagePadding>
-      <div>
+      <div className="min-h-[600px]">
         <div className="mt-9"></div>
         <Category/>
         <div className="mt-12">
           <PostCarousel 
+          title="오늘의 추천"
+          subtitle="오늘의 추천 영상"
           posts={posts}
           />
         </div>
