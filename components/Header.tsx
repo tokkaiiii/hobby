@@ -6,10 +6,11 @@ import { FiSearch } from "react-icons/fi";
 import { DrawerContent } from "./ui/drawer";
 import { Drawer } from "./ui/drawer";
 import { DrawerTrigger } from "./ui/drawer";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "@/components/elements/Logo";
 import Navigator from "@/components/elements/Navigator";
 import useUIState from "@/store/useUIState";
+import { cn } from "@/lib/utils";
 const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -29,10 +30,23 @@ const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
   };
 
 export default function Header({ children }: { children: React.ReactNode }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
   const { headerImageSrc } = useUIState();
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollValue = headerRef.current?.scrollTop;
+      setIsScrolled(scrollValue !== 0);
+    };
+    headerRef.current?.addEventListener("scroll", handleScroll);
+    return () => headerRef.current?.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="relative overflow-y-auto h-full w-full">
-      <section className="absolute top-0 w-full">
+    <header ref={headerRef} className="relative overflow-y-auto h-full w-full">
+      <section className=" absolute top-0 w-full">
         <div className="relative w-full h-[400px]">
           <Image
             fill
@@ -44,7 +58,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
           <div className="absolute top-0 bg-gradient-to-t from-black w-full h-[400px]"></div>
         </div>
       </section>
-      <section className="sticky top-0">
+      <section className={cn("z-20 sticky top-0", isScrolled ? "bg-black" : "")}>
         <PagePadding>
             <div className="h-[64px] flex flex-row items-center justify-between">
             <article
