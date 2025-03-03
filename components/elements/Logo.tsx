@@ -9,6 +9,10 @@ const router = useRouter();
         router.push("/");
     }
 
+    const onClickLogo = () => {
+        router.push("/");
+    }
+
   return (
     <section className="flex flex-row items-center gap-2">
         {isInDrawer ? (
@@ -16,7 +20,7 @@ const router = useRouter();
         ) : (
             <IconButton icon={<IoMenu size={24} />} onClickIcon={onClickIcon} />
         )}
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={onClickLogo}>
             <Image src="/logo.png" alt="logo" width={"100"} height={"100"} />
         </div>
     </section>

@@ -34,7 +34,6 @@ export default function Header({ children }: { children: React.ReactNode }) {
   const headerRef = useRef<HTMLDivElement>(null);
   const { headerImageSrc } = useUIState();
 
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollValue = headerRef.current?.scrollTop;
@@ -52,7 +51,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             fill
             className="object-cover"
             alt="main-image"
-            src={headerImageSrc || "/img/ramen.jpg"}
+            src={headerImageSrc || "/img/main.jpg"}
           />
           <div className="absolute top-0 bg-black opacity-40 w-full h-[400px]"></div>
           <div className="absolute top-0 bg-gradient-to-t from-black w-full h-[400px]"></div>

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import { getImageUrl } from "@/api/storage";
 interface UIState {
     categoryLabel: string;
     headerImageSrc: string;
@@ -9,7 +9,7 @@ interface UIState {
 
 const useUIState = create<UIState>((set) => ({
     categoryLabel: "",
-    headerImageSrc: "/img/ramen.jpg",
+    headerImageSrc: "/img/main.jpg",
     setCategoryLabel: (categoryLabel: string) => set({ categoryLabel }),
     setHeaderImageSrc: (headerImageSrc: string) => set({ headerImageSrc }),
 }));
