@@ -17,7 +17,6 @@ const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
         <DrawerTrigger>{children}</DrawerTrigger>
         <DrawerContent className="w-[240px] h-full">
           {/* 로고 */}
-          {/* 네비게이션 + 재생목록 */}
           <div className="py-3">
             <div className="px-3">
               <Logo isInDrawer onClickClose={() => setIsOpen(false)} />

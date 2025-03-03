@@ -21,11 +21,8 @@ export default function Category() {
             {categories.map((category) => (
                 <li key={category.label}
                 onClick={() => handleClickCategory(category)}
-                className={cn(
-                    "h-[38px] px-4 flex items-center justify-center rounded-full bg-neutral-800 hover:bg-neutral-700 cursor-pointer",
-                    categoryLabel === category.label && "bg-neutral-700"
-                )}
-                >
+                className={cn("h-[38px] min-w-fit px-3 flex justify-center items-center border border-transparent rounded-lg bg-[rgba(144,144,144,0.2)] hover:bg-[rgba(144,144,144,0.45)] cursor-pointer",
+                    categoryLabel === category.label && "bg-white text-black hover:bg-white")}    >
                     {category.label}
                 </li>
             ))}
