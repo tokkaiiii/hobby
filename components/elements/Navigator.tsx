@@ -37,7 +37,8 @@ export default function Navigator() {
             ))}
         </section>
         <section className="px-6">
-            <div className="w-full h-[1px] bg-neutral-700"></div>
+            <div className="w-full h-[1px] bg-neutral-700">
+            </div>
         </section>
     </div>
   );

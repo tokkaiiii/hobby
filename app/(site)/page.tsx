@@ -1,9 +1,15 @@
 import Image from "next/image";
+import PagePadding from "@/components/PagePadding";
+import Category from "@/components/Category";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div>
-      <h1>기본 페이지</h1>
-    </div>
+    <PagePadding>
+      <div>
+        <div className="mt-9"></div>
+        <Category/>
+        <div></div>
+      </div>
+    </PagePadding>
   );
 }
