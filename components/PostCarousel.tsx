@@ -9,18 +9,23 @@ import {
 import Image from "next/image";
 import PostCard from "./PostCard";
 interface PostCarouselProps {
-    title: string;
+  title: string;
   subtitle?: string;
   Thumbnail?: React.ReactNode;
   posts: Post[];
 }
 
-export default function PostCarousel({ title, subtitle, Thumbnail, posts }: PostCarouselProps) {
+export default function PostCarousel({
+  title,
+  subtitle,
+  Thumbnail,
+  posts,
+}: PostCarouselProps) {
   return (
     <div className="w-full">
       <Carousel>
-      <div className="flex flex-row justify-between items-end my-2">
-      <article className="flex flex-row gap-3">
+        <div className="flex flex-row justify-between items-end my-2">
+          <article className="flex flex-row gap-3">
             {Thumbnail}
             <div className="flex flex-col justify-center">
               <div>
@@ -31,17 +36,17 @@ export default function PostCarousel({ title, subtitle, Thumbnail, posts }: Post
               </div>
             </div>
           </article>
-        <div className="relative left-[-45px]">
+          <div className="relative left-[-45px]">
             <div className="absolute bottom-[20px]">
-              <CarouselPrevious className="right-2"/>
-              <CarouselNext className="left-2"/>
+              <CarouselPrevious className="right-2" />
+              <CarouselNext className="left-2" />
             </div>
           </div>
         </div>
         <CarouselContent>
           {posts.map((post) => (
             <CarouselItem key={post.id} className="md:basis-1/2 lg:basis-1/3">
-              <PostCard post={post}/>
+              <PostCard post={post} />
             </CarouselItem>
           ))}
         </CarouselContent>

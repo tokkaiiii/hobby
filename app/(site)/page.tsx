@@ -12,8 +12,7 @@ export default async function Home() {
         <Category/>
         <div className="mt-12">
           <PostCarousel 
-          title="오늘의 추천"
-          subtitle="오늘의 추천 영상"
+          title="티셔츠"
           posts={posts}
           />
         </div>

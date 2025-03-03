@@ -11,7 +11,7 @@ interface PostCardProps {
 export default function PostCard({ post }: PostCardProps) {
     return (
         <article className="h-[240px] cursor-pointer">
-            <section className="relative h-[136px]">
+            <section className="relative h-[136px] group">
                 <Image 
                     src={post.thumbnail} 
                     alt={post.title} 
@@ -22,18 +22,11 @@ export default function PostCard({ post }: PostCardProps) {
                     <div className="absolute top-2 right-4">
                         <IconButton icon={<MdMoreVert size={20}/>}  />
                     </div>
-                    <div 
-                    className="absolute bottom-4 right-4 flex items-center justify-center 
-                    transform-gpu transition-transform hover:scale-110
-                    bg-[rgba(0,0,0,0.7)] w-[45px] h-[45px] rounded-full
-                    hover:bg-[rgba(0,0,0,0.9)] pl-[1.5px]">
-                        <FiPlay size={20}/>
-                    </div>
                 </div>  
             </section>
-            <section className="relative w-full h-full">
-                <h3 className="text-lg font-bold">{post.title}</h3>
-                <p className="text-sm text-gray-500">{post.subtitle}</p>
+            <section className="mt-2">
+                <div>{post.title}</div>
+                <div className="text-neutral-500">{post.subtitle}</div>
             </section>
         </article>
     )
