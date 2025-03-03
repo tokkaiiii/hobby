@@ -3,17 +3,18 @@ import Image from "next/image";
 import { FiPlay } from "react-icons/fi";
 import IconButton from "./elements/IconButton";
 import { MdMoreVert } from "react-icons/md";
-
+import { getImageUrl } from "@/api/storage";
 interface PostCardProps {
     post: Post
 }   
 
 export default function PostCard({ post }: PostCardProps) {
+    const imageUrl = getImageUrl(`${post.category}/01.jpg`);
     return (
         <article className="h-[240px] cursor-pointer">
             <section className="relative h-[136px] group">
                 <Image 
-                    src={post.thumbnail} 
+                    src={imageUrl} 
                     alt={post.title} 
                     fill
                     className="object-cover"

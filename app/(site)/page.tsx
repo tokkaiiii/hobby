@@ -2,9 +2,11 @@ import Image from "next/image";
 import PagePadding from "@/components/PagePadding";
 import Category from "@/components/Category";
 import PostCarousel from "@/components/PostCarousel";
-import { posts } from "@/lib/data";
-
+import { getPosts, getPostById } from "@/api/post";
 export default async function Home() {
+  const posts = await getPosts();
+  console.log(posts[0].thumbnail);
+
   return (
     <PagePadding>
       <div className="min-h-[600px]">

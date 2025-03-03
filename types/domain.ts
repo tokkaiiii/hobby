@@ -2,8 +2,9 @@ export type Post = {
     id: number;
     title: string;
     subtitle: string;
-    thumbnail: string;
+    description: string;
     category: string;
-    createdAt: string;
-    updatedAt: string;
+    thumbnail: string | null;
+    created_at: string | null;
+    updated_at: string | null;
 }
