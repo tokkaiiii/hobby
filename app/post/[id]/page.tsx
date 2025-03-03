@@ -23,7 +23,7 @@ export default async function PostPage({ params }: PostPageProps) {
     }
     
     const post = posts[0];
-    const imageUrl = getImageUrl(`${post.category}/01.jpg`);
+    const imageUrl = getImageUrl(`${post.category}/${post.thumbnail}`);
 
     return (
         <PagePadding>

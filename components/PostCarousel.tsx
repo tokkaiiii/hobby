@@ -46,7 +46,7 @@ export default function PostCarousel({
         </div>
         <CarouselContent>
           {posts.map((post) => {
-            const imageUrl = getImageUrl(`${post.category}/01.jpg`);
+            const imageUrl = getImageUrl(`${post.category}/${post.thumbnail}`);
             return (
               <CarouselItem key={post.id} className="md:basis-1/2 lg:basis-1/3">
                 <PostCard post={post} imageUrl={imageUrl} />
