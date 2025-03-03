@@ -1,17 +1,24 @@
+'use client'
 import { Post } from "@/types/domain";
 import Image from "next/image";
 import { FiPlay } from "react-icons/fi";
 import IconButton from "./elements/IconButton";
 import { MdMoreVert } from "react-icons/md";
 import { getImageUrl } from "@/api/storage";
+import { useRouter } from "next/navigation";
 interface PostCardProps {
     post: Post
+    imageUrl: string
 }   
 
-export default function PostCard({ post }: PostCardProps) {
-    const imageUrl = getImageUrl(`${post.category}/01.jpg`);
+export default function PostCard({ post, imageUrl }: PostCardProps) {
+    const router = useRouter();
+    const handleClickPost = () => {
+        router.push(`/post/${post.id}`);
+    }
+
     return (
-        <article className="h-[240px] cursor-pointer">
+        <article className="h-[240px] cursor-pointer" onClick={handleClickPost}>
             <section className="relative h-[136px] group">
                 <Image 
                     src={imageUrl} 

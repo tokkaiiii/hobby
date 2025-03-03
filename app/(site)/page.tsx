@@ -5,7 +5,6 @@ import PostCarousel from "@/components/PostCarousel";
 import { getPosts, getPostById } from "@/api/post";
 export default async function Home() {
   const posts = await getPosts();
-  console.log(posts[0].thumbnail);
 
   return (
     <PagePadding>

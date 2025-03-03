@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import PostCard from "./PostCard";
+import { getImageUrl } from "@/api/storage";
 interface PostCarouselProps {
   title: string;
   subtitle?: string;
@@ -44,11 +45,14 @@ export default function PostCarousel({
           </div>
         </div>
         <CarouselContent>
-          {posts.map((post) => (
-            <CarouselItem key={post.id} className="md:basis-1/2 lg:basis-1/3">
-              <PostCard post={post} />
-            </CarouselItem>
-          ))}
+          {posts.map((post) => {
+            const imageUrl = getImageUrl(`${post.category}/01.jpg`);
+            return (
+              <CarouselItem key={post.id} className="md:basis-1/2 lg:basis-1/3">
+                <PostCard post={post} imageUrl={imageUrl} />
+              </CarouselItem>
+            )
+          })}
         </CarouselContent>
       </Carousel>
     </div>
