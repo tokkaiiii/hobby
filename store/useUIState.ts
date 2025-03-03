@@ -1,16 +1,16 @@
 import { create } from "zustand";
 
 interface UIState {
-    category: string;
+    categoryLabel: string;
     headerImageSrc: string;
-    setCategory: (category: string) => void;
+    setCategoryLabel: (categoryLabel: string) => void;
     setHeaderImageSrc: (headerImageSrc: string) => void;
 }
 
 const useUIState = create<UIState>((set) => ({
-    category: "",
+    categoryLabel: "",
     headerImageSrc: "/img/ramen.jpg",
-    setCategory: (category: string) => set({ category }),
+    setCategoryLabel: (categoryLabel: string) => set({ categoryLabel }),
     setHeaderImageSrc: (headerImageSrc: string) => set({ headerImageSrc }),
 }));
 

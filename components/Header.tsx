@@ -9,7 +9,7 @@ import { DrawerTrigger } from "./ui/drawer";
 import { useState } from "react";
 import Logo from "@/components/elements/Logo";
 import Navigator from "@/components/elements/Navigator";
-
+import useUIState from "@/store/useUIState";
 const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
@@ -30,6 +30,7 @@ const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
   };
 
 export default function Header({ children }: { children: React.ReactNode }) {
+  const { headerImageSrc } = useUIState();
   return (
     <header className="relative overflow-y-auto h-full w-full">
       <section className="absolute top-0 w-full">
@@ -38,7 +39,7 @@ export default function Header({ children }: { children: React.ReactNode }) {
             fill
             className="object-cover"
             alt="main-image"
-            src={"/img/ramen.jpg"}
+            src={headerImageSrc || "/img/ramen.jpg"}
           />
           <div className="absolute top-0 bg-black opacity-40 w-full h-[400px]"></div>
           <div className="absolute top-0 bg-gradient-to-t from-black w-full h-[400px]"></div>
