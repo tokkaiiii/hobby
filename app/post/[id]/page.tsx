@@ -27,17 +27,19 @@ export default async function PostPage({ params }: PostPageProps) {
 
     return (
         <PagePadding>
-            <div className="max-w-4xl mx-auto py-8">
-                <div className="mb-6">
+            <div >
+                <div className="mt-9">
                     <Link href="/">
-                        <Button variant="ghost" className="gap-2">
-                            <ArrowLeft className="h-4 w-4" />
+                        <div 
+                        className="h-[38px] w-fit min-w-fit px-3 flex justify-center items-center border border-transparent rounded-lg bg-[rgba(144,144,144,0.2)] hover:bg-[rgba(144,144,144,0.45)] cursor-pointer"
+                        >
+                            <ArrowLeft size={16} />
                             돌아가기
-                        </Button>
+                        </div>
                     </Link>
                 </div>
                 
-                <article className="space-y-8">
+                <article className="space-y-8 mt-12">
                     <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                         <Suspense fallback={<div className="w-full h-full bg-gray-200 animate-pulse" />}>
                             <Image
