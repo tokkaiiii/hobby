@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/Sidebar";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,6 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {process.env.PRIVATE_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics 
+            measurementId={process.env.PRIVATE_GA_MEASUREMENT_ID}
+          />
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -25,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Sidebar>
-          {children}
+            {children}
           </Sidebar>
         </ThemeProvider>
       </body>
