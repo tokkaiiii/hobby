@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/Sidebar";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
-
+import SupabaseProvider from "@/providers/supabase-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -31,9 +31,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Sidebar>
-            {children}
-          </Sidebar>
+          <SupabaseProvider>
+            <Sidebar>
+              {children}
+            </Sidebar>
+          </SupabaseProvider>
         </ThemeProvider>
       </body>
     </html>

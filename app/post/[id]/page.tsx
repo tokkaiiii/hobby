@@ -9,14 +9,10 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
-interface PostPageProps {
-    params: {
-        id: string;
-    };
-}
 
-export default async function PostPage({ params }: PostPageProps) {
-    const posts = await getPostById(parseInt(params.id));
+export default async function PostPage({ params }: { params: Promise<{ id: number }> }) {
+    const { id } = await params;
+    const posts = await getPostById(id);
     
     if (!posts || posts.length === 0) {
         notFound();

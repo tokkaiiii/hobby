@@ -11,23 +11,24 @@ import Logo from "@/components/elements/Logo";
 import Navigator from "@/components/elements/Navigator";
 import useUIState from "@/store/useUIState";
 import { cn } from "@/lib/utils";
+import UserIcon from "./UserIcon";
 const HeaderDrawer = ({ children }: { children: React.ReactNode }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-      <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
-        <DrawerTrigger>{children}</DrawerTrigger>
-        <DrawerContent className="w-[240px] h-full">
-          {/* 로고 */}
-          <div className="py-3">
-            <div className="px-3">
-              <Logo isInDrawer onClickClose={() => setIsOpen(false)} />
-            </div>
-            <Navigator />
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Drawer direction="left" open={isOpen} onOpenChange={setIsOpen}>
+      <DrawerTrigger>{children}</DrawerTrigger>
+      <DrawerContent className="w-[240px] h-full">
+        {/* 로고 */}
+        <div className="py-3">
+          <div className="px-3">
+            <Logo isInDrawer onClickClose={() => setIsOpen(false)} />
           </div>
-        </DrawerContent>
-      </Drawer>
-    );
-  };
+          <Navigator />
+        </div>
+      </DrawerContent>
+    </Drawer>
+  );
+};
 
 export default function Header({ children }: { children: React.ReactNode }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,28 +58,33 @@ export default function Header({ children }: { children: React.ReactNode }) {
           <div className="absolute top-0 bg-gradient-to-t from-black w-full h-[400px]"></div>
         </div>
       </section>
-      <section className={cn("z-20 sticky top-0", isScrolled ? "bg-black" : "")}>
+      <section
+        className={cn("z-20 sticky top-0", isScrolled ? "bg-black" : "")}
+      >
         <PagePadding>
-            <div className="h-[64px] flex flex-row items-center justify-between">
+          <div className="h-[64px] flex flex-row items-center justify-between">
             <article
               className="h-[42px] min-w-[480px] hidden lg:flex flex-row items-center 
             bg-[rgba(0,0,0,0.14)] rounded-2xl px-[16px] gap-[16px] border border-neutral-500"
             >
-                    <div>
-                        <FiSearch size={24}/>
-                    </div>
-                    <input 
-                    type="text" 
-                    placeholder="Search" 
-                    className="bg-transparent outline-none h-full w-full"
-                    />
-                </article>
-                <HeaderDrawer>
+              <div>
+                <FiSearch size={24} />
+              </div>
+              <input
+                type="text"
+                placeholder="Search"
+                className="bg-transparent outline-none h-full w-full"
+              />
+            </article>
+            <HeaderDrawer>
               <article className="lg:hidden">
                 <Logo />
               </article>
             </HeaderDrawer>
-            </div>
+            <article>
+              <UserIcon /> 
+            </article>
+          </div>
         </PagePadding>
       </section>
       <section className="relative">{children}</section>
