@@ -8,15 +8,27 @@ const SignIn = () => {
   const supabaseClient = useSupabaseClient();
  
   return (
-    <div className="h-full flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center p-4">
       <Auth
         supabaseClient={supabaseClient}
         appearance={{
           theme: ThemeSupa,
-          style: { container: { width: "300px" } },
-        }} 
-        providers={["kakao"]} 
-        localization={{}} 
+          style: {
+            container: { 
+              maxWidth: "400px",
+              width: "100%" 
+            },
+          },
+        }}
+        providers={["kakao"]}
+        localization={{
+          variables: {
+            sign_in: {
+              email_label: "이메일",
+              password_label: "비밀번호",
+            },
+          },
+        }}
       />
     </div>
   );

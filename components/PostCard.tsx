@@ -6,6 +6,7 @@ import IconButton from "./elements/IconButton";
 import { MdMoreVert } from "react-icons/md";
 import { getImageUrl } from "@/api/storage";
 import { useRouter } from "next/navigation";
+import { eventSenderGA } from "@/utils/google-analytics";
 interface PostCardProps {
     post: Post
     imageUrl: string
@@ -14,6 +15,7 @@ interface PostCardProps {
 export default function PostCard({ post, imageUrl }: PostCardProps) {
     const router = useRouter();
     const handleClickPost = () => {
+        eventSenderGA("Post", "Post Click", post.title);
         router.push(`/post/${post.id}`);
     }
 
