@@ -2,7 +2,6 @@ import PagePadding from "@/components/PagePadding";
 import { getPostById } from "@/api/post";
 import { getImageUrl } from "@/api/storage";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";

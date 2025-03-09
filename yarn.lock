@@ -280,16 +280,9 @@
   dependencies:
     "@radix-ui/react-slot" "1.1.2"
 
-"@radix-ui/react-slot@1.1.2":
+"@radix-ui/react-slot@1.1.2", "@radix-ui/react-slot@^1.1.2":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.1.2.tgz"
-  integrity sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==
-  dependencies:
-    "@radix-ui/react-compose-refs" "1.1.1"
-
-"@radix-ui/react-slot@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-1.1.2.tgz#daffff7b2bfe99ade63b5168407680b93c00e1c6"
   integrity sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==
   dependencies:
     "@radix-ui/react-compose-refs" "1.1.1"
@@ -330,12 +323,12 @@
 
 "@stitches/core@^1.2.8":
   version "1.2.8"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-1.2.8.tgz#dce3b8fdc764fbc6dbea30c83b73bfb52cf96173"
+  resolved "https://registry.npmjs.org/@stitches/core/-/core-1.2.8.tgz"
   integrity sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==
 
 "@supabase/auth-helpers-nextjs@^0.10.0":
   version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@supabase/auth-helpers-nextjs/-/auth-helpers-nextjs-0.10.0.tgz#e831968f95e1bc44f400825d251a8b2fda97ee9f"
+  resolved "https://registry.npmjs.org/@supabase/auth-helpers-nextjs/-/auth-helpers-nextjs-0.10.0.tgz"
   integrity sha512-2dfOGsM4yZt0oS4TPiE7bD4vf7EVz7NRz/IJrV6vLg0GP7sMUx8wndv2euLGq4BjN9lUCpu6DG/uCC8j+ylwPg==
   dependencies:
     "@supabase/auth-helpers-shared" "0.7.0"
@@ -343,12 +336,12 @@
 
 "@supabase/auth-helpers-react@^0.5.0":
   version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@supabase/auth-helpers-react/-/auth-helpers-react-0.5.0.tgz#c75f07df578ed06b6d7d66bb12c43e46501e60ed"
+  resolved "https://registry.npmjs.org/@supabase/auth-helpers-react/-/auth-helpers-react-0.5.0.tgz"
   integrity sha512-5QSaV2CGuhDhd7RlQCoviVEAYsP7XnrFMReOcBazDvVmqSIyjKcDwhLhWvnrxMOq5qjOaA44MHo7wXqDiF0puQ==
 
 "@supabase/auth-helpers-shared@0.7.0":
   version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@supabase/auth-helpers-shared/-/auth-helpers-shared-0.7.0.tgz#244a6b6ac39a5eb1bc8d69a57c25aa580cd0f669"
+  resolved "https://registry.npmjs.org/@supabase/auth-helpers-shared/-/auth-helpers-shared-0.7.0.tgz"
   integrity sha512-FBFf2ei2R7QC+B/5wWkthMha8Ca2bWHAndN+syfuEUUfufv4mLcAgBCcgNg5nJR8L0gZfyuaxgubtOc9aW3Cpg==
   dependencies:
     jose "^4.14.4"
@@ -362,7 +355,7 @@
 
 "@supabase/auth-ui-react@^0.4.7":
   version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@supabase/auth-ui-react/-/auth-ui-react-0.4.7.tgz#6e3f941fc82a9798ba2033fab865a9f5fdfa0d32"
+  resolved "https://registry.npmjs.org/@supabase/auth-ui-react/-/auth-ui-react-0.4.7.tgz"
   integrity sha512-Lp4FQGFh7BMX1Y/BFaUKidbryL7eskj1fl6Lby7BeHrTctbdvDbCMjVKS8wZ2rxuI8FtPS2iU900fSb70FHknQ==
   dependencies:
     "@stitches/core" "^1.2.8"
@@ -373,7 +366,7 @@
 
 "@supabase/auth-ui-shared@0.1.8", "@supabase/auth-ui-shared@^0.1.8":
   version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@supabase/auth-ui-shared/-/auth-ui-shared-0.1.8.tgz#1ce63c4ac58f29d7c76436b774b0e8809dd08617"
+  resolved "https://registry.npmjs.org/@supabase/auth-ui-shared/-/auth-ui-shared-0.1.8.tgz"
   integrity sha512-ouQ0DjKcEFg+0gZigFIEgu01V3e6riGZPzgVD0MJsCBNsMsiDT74+GgCEIElMUpTGkwSja3xLwdFRFgMNFKcjg==
 
 "@supabase/functions-js@2.4.4":
@@ -416,7 +409,7 @@
 
 "@supabase/supabase-js@^2.49.1":
   version "2.49.1"
-  resolved "https://registry.yarnpkg.com/@supabase/supabase-js/-/supabase-js-2.49.1.tgz#457f7b19722d2cff064a1923399a42b855c4a9b8"
+  resolved "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.49.1.tgz"
   integrity sha512-lKaptKQB5/juEF5+jzmBeZlz69MdHZuxf+0f50NwhL+IE//m4ZnOeWlsKRjjsM0fVayZiQKqLvYdBn0RLkhGiQ==
   dependencies:
     "@supabase/auth-js" "2.68.0"
@@ -850,7 +843,7 @@ chokidar@^3.6.0:
 
 class-variance-authority@^0.7.1:
   version "0.7.1"
-  resolved "https://registry.yarnpkg.com/class-variance-authority/-/class-variance-authority-0.7.1.tgz#4008a798a0e4553a781a57ac5177c9fb5d043787"
+  resolved "https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz"
   integrity sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==
   dependencies:
     clsx "^2.1.1"
@@ -862,7 +855,7 @@ client-only@0.0.1:
 
 clsx@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
+  resolved "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz"
   integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
 
 color-convert@^2.0.1:
@@ -940,7 +933,7 @@ data-view-byte-offset@^1.0.1:
 
 date-fns@^4.1.0:
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-4.1.0.tgz#64b3d83fff5aa80438f5b1a633c2e83b8a1c2d14"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz"
   integrity sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==
 
 debug@^3.2.7:
@@ -1984,7 +1977,7 @@ jiti@^1.21.6:
 
 jose@^4.14.4:
   version "4.15.9"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-4.15.9.tgz#9b68eda29e9a0614c042fa29387196c7dd800100"
+  resolved "https://registry.npmjs.org/jose/-/jose-4.15.9.tgz"
   integrity sha512-1vUQX+IdDMVPj4k8kOxgUqlcK518yluMuGZwqlr44FS1ppZB/5GWh4rZG89erpOBOJjU/OBsnCVFfapsRz6nEA==
 
 "js-tokens@^3.0.0 || ^4.0.0":
@@ -2094,7 +2087,7 @@ lru-cache@^10.2.0:
 
 lucide-react@^0.477.0:
   version "0.477.0"
-  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.477.0.tgz#41aff9cf8447a1abbeb1e28de9caefafc8340cf6"
+  resolved "https://registry.npmjs.org/lucide-react/-/lucide-react-0.477.0.tgz"
   integrity sha512-yCf7aYxerFZAbd8jHJxjwe1j7jEMPptjnaOqdYeirFnEy85cNR3/L+o0I875CYFYya+eEVzZSbNuRk8BZPDpVw==
 
 math-intrinsics@^1.1.0:
@@ -2491,7 +2484,7 @@ react-dom@^18, react-dom@^18.2.0:
 
 react-ga4@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-ga4/-/react-ga4-2.1.0.tgz#56601f59d95c08466ebd6edfbf8dede55c4678f9"
+  resolved "https://registry.npmjs.org/react-ga4/-/react-ga4-2.1.0.tgz"
   integrity sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ==
 
 react-icons@^5.0.1:
@@ -2501,13 +2494,18 @@ react-icons@^5.0.1:
 
 react-intersection-observer@^9.16.0:
   version "9.16.0"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.16.0.tgz#7376d54edc47293300961010844d53b273ee0fb9"
+  resolved "https://registry.npmjs.org/react-intersection-observer/-/react-intersection-observer-9.16.0.tgz"
   integrity sha512-w9nJSEp+DrW9KmQmeWHQyfaP6b03v+TdXynaoA964Wxt7mdR3An11z4NNCQgL4gKSK7y1ver2Fq+JKH6CWEzUA==
 
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-loading-skeleton@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-3.5.0.tgz#da2090355b4dedcad5c53cb3f0ed364e3a76d6ca"
+  integrity sha512-gxxSyLbrEAdXTKgfbpBEFZCO/P153DnqSCQau2+o6lNy1jgMRr2MmRmOzMmyrwSaSYLRB8g7b0waYPmUjz7IhQ==
 
 react-remove-scroll-bar@^2.3.7:
   version "2.3.8"
@@ -2682,7 +2680,7 @@ semver@^7.5.4, semver@^7.6.3:
 
 set-cookie-parser@^2.6.0:
   version "2.7.1"
-  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.7.1.tgz#3016f150072202dfbe90fadee053573cc89d2943"
+  resolved "https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.1.tgz"
   integrity sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==
 
 set-function-length@^1.2.2:
@@ -2953,7 +2951,7 @@ supports-preserve-symlinks-flag@^1.0.0:
 
 tailwind-merge@^3.0.2:
   version "3.0.2"
-  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-3.0.2.tgz#567eff76de12211e24dd909da0f5ed6f4f422b0c"
+  resolved "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.0.2.tgz"
   integrity sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==
 
 tailwindcss-animate@^1.0.7:

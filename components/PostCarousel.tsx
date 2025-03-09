@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 import PostCard from "./PostCard";
 import { getImageUrl } from "@/api/storage";
 interface PostCarouselProps {

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { IoFastFoodOutline } from "react-icons/io5";
+import { GiConverseShoe } from "react-icons/gi";
 export default function Navigator() {
     const pathname = usePathname();
     const routes = useMemo(() => [
@@ -19,6 +20,12 @@ export default function Navigator() {
             icon: <IoFastFoodOutline size={24} />,
             isActive: pathname === "/food",
             href: "/food",
+        },
+        {
+            label: "Clothing",
+            icon: <GiConverseShoe size={24} />,
+            isActive: pathname === "/clothing",
+            href: "/clothing",
         }
     ], [pathname]);
   return (
