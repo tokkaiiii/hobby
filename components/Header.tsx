@@ -36,12 +36,17 @@ export default function Header({ children }: { children: React.ReactNode }) {
   const { headerImageSrc } = useUIState();
 
   useEffect(() => {
+    const currentHeader = headerRef.current; // 현재 ref 값을 변수에 저장
+    
     const handleScroll = () => {
-      const scrollValue = headerRef.current?.scrollTop;
-      setIsScrolled(scrollValue !== 0);
+      if (currentHeader) {
+        const isScrolled = window.scrollY > currentHeader.offsetHeight;
+        setIsScrolled(isScrolled);
+      }
     };
-    headerRef.current?.addEventListener("scroll", handleScroll);
-    return () => headerRef.current?.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
