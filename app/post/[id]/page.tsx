@@ -69,6 +69,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: numbe
                         </div>
                     </div>
                 </article>
+                <div className="mt-9 md:mt-12"></div>
             </div>
         </PagePadding>
     );
