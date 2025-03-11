@@ -3,6 +3,7 @@ import Category from "@/components/Category";
 import PostCarousel from "@/components/PostCarousel";
 import { getPosts, getPostById } from "@/api/post";
 import KakaoAdfit from "@/components/advertisement/KakaoAdfit";
+import AdSense from "@/components/advertisement/AdSense";
 export default async function Home() {
   const { posts } = await getPosts();
   return (
@@ -11,6 +12,7 @@ export default async function Home() {
         <div className="mt-9"></div>
         <Category/>
         <div className="mt-9"></div>
+        <AdSense slot="9216849771" />
         <KakaoAdfit />
         <div className="mt-12">
           <PostCarousel 
