@@ -12,7 +12,6 @@ export default async function Home() {
         <div className="mt-9"></div>
         <Category/>
         <div className="mt-9"></div>
-        <AdSense slot="9216849771" />
         <KakaoAdfit />
         <div className="mt-12">
           <PostCarousel 
@@ -21,6 +20,7 @@ export default async function Home() {
           />
         </div>
       </div>
+      <AdSense slot="9216849771" />
     </PagePadding>
   );
 }
