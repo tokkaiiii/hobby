@@ -25,7 +25,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: numbe
             <div >
                 <div className="mt-9"></div>
                 <div className="flex justify-center">
-                    <CoopangDynamicBanner />
+                    <CoopangDynamicBanner unit="indexBanner" />
                 </div>
                 <div className="mt-9">
                     <Link href="/">

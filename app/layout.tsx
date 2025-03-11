@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/Sidebar";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import SupabaseProvider from "@/providers/supabase-provider";
+import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,6 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-3036068066140139"/>
+        <Script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3036068066140139"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={inter.className}>
         {process.env.PRIVATE_GA_MEASUREMENT_ID && (
           <GoogleAnalytics 
