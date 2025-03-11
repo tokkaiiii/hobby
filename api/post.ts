@@ -1,3 +1,4 @@
+import { Post } from "@/types/domain";
 import supabase from "./supabase";
 
 export const getPosts = async (page = 1, limit = 12) => {
@@ -28,6 +29,19 @@ export const getPosts = async (page = 1, limit = 12) => {
 
 export const getPostById = async (id: number) => {
     const { data, error } = await supabase.from("post").select("*").eq("id", id);
+    if (error) {
+        throw error;
+    }
+    return data;
+}
+
+export const createPost = async (post: Post) => {
+    const { created_at, updated_at, ...restPost } = post;
+    const { data, error } = await supabase.from("post").insert({
+        ...restPost,
+        created_at: undefined,
+        updated_at: undefined,
+    });
     if (error) {
         throw error;
     }

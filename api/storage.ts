@@ -10,17 +10,28 @@ if (!supabaseUrl || !supabaseAnonKey) {
 const supabaseStorage = createClient(supabaseUrl, supabaseAnonKey);
 
 export const getImageUrl = (path: string) => {
-    const { data } = supabaseStorage.storage.from(process.env.PRIVATE_SUPABASE_STORAGE_BUCKET!).getPublicUrl(path);
+    const { data } = supabaseStorage.storage.from(process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET!).getPublicUrl(path);
     return data.publicUrl;
 }
 
 export const uploadImage = async (path: string, file: File) => {
-    const { data, error } = await supabaseStorage.storage.from(process.env.PRIVATE_SUPABASE_STORAGE_BUCKET!).upload(path, file);
+    const { data, error } = await supabaseStorage.storage
+        .from(process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET!)
+        .upload(path, file, {
+            cacheControl: '3600',
+            upsert: false
+        });
+    
+    if (error) {
+        console.error('Storage error:', error);
+        throw new Error(`이미지 업로드 실패: ${error.message}`);
+    }
+    
     return data;
 }
 
 export const deleteImage = async (path: string) => {
-    const { data, error } = await supabaseStorage.storage.from(process.env.PRIVATE_SUPABASE_STORAGE_BUCKET!).remove([path]);
+    const { data, error } = await supabaseStorage.storage.from(process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET!).remove([path]);
     return data;
 }
 

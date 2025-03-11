@@ -23,8 +23,8 @@ import {
 } from "@/components/ui/select";
 import { ImageUpload } from "@/components/image-upload";
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
-
+import { createPost } from "@/api/post";
+import { getImageUrl, uploadImage } from "@/api/storage";
 const formSchema = z.object({
     title: z.string().min(2, "제목을 입력해주세요"),
     description: z.string().min(10, "상품 설명을 10자 이상 입력해주세요"),
@@ -56,17 +56,13 @@ export function PostForm() {
             const fileName = `${crypto.randomUUID()}.${fileExt}`;
             const filePath = `clothing/${fileName}`;
 
-            const { error: uploadError } = await supabase.storage
-                .from('images')
-                .upload(filePath, file);
+            const uploadResult = await uploadImage(filePath, file);
 
-            if (uploadError) {
-                throw uploadError;
+            if (uploadResult === null) {
+                throw new Error("이미지 업로드 실패");
             }
 
-            const { data: { publicUrl } } = supabase.storage
-                .from('images')
-                .getPublicUrl(filePath);
+            const publicUrl = getImageUrl(filePath);
 
             uploadedUrls.push(publicUrl);
         }
@@ -86,6 +82,14 @@ export function PostForm() {
             console.log({
                 ...values,
                 images: imageUrls
+            });
+            await createPost({
+                ...values,
+                thumbnail: imageUrls[0] ?? null,
+                id: 0,
+                subtitle: values.description.slice(0, 100),
+                created_at: null,
+                updated_at: null,
             });
 
             // 3. Reset form on success
