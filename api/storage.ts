@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -7,13 +8,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error("Missing Supabase environment variables");
 }
 
-// 인증된 클라이언트 생성
-export const supabaseStorage = createClient(supabaseUrl, supabaseAnonKey, {
-    auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-    },
-});
+// createClientComponentClient를 사용하여 일관된 인증 상태를 유지
+export const supabaseStorage = createClientComponentClient();
 
 export const getImageUrl = (path: string) => {
     const { data } = supabaseStorage.storage.from(process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET!).getPublicUrl(path);
