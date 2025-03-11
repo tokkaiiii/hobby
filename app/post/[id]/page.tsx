@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-
+import CoopangDynamicBanner from "@/components/advertisement/CoopangDynamicBanner";
 
 export default async function PostPage({ params }: { params: Promise<{ id: number }> }) {
     const { id } = await params;
@@ -23,6 +23,10 @@ export default async function PostPage({ params }: { params: Promise<{ id: numbe
     return (
         <PagePadding>
             <div >
+                <div className="mt-9"></div>
+                <div className="flex justify-center">
+                    <CoopangDynamicBanner />
+                </div>
                 <div className="mt-9">
                     <Link href="/">
                         <div 
